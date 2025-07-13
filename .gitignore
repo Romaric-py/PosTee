@@ -1,0 +1,27 @@
+# Dossiers Python compilés
+**/__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environnements virtuels
+env/
+venv/
+.venv/
+
+# Fichiers d’environnement ou secrets
+.env
+*.env
+
+# Logs & autres fichiers temporaires
+*.log
+*.sqlite3
+*.db
+
+# Config IDE
+.vscode/
+.idea/
+
+# Mac/Linux/Windows
+.DS_Store
+Thumbs.db
