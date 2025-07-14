@@ -1,3 +1,4 @@
+# UTILS
 class TemplateDict(dict):
     def __missing__(self, key):
         return f'{{{key}}}'
@@ -7,6 +8,9 @@ def read_file(filename):
         content = f.read()
     return content
 
+
+
+# CONTROLLERS 
 def home(handler, query_params=None, body_request=None):
     response_content = read_file('html/index.html')
     handler.send_html_response(response_content)

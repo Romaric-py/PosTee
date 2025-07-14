@@ -104,6 +104,14 @@ CREATE TABLE media (
     created_at  DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 11 Sessions
+CREATE TABLE IF NOT EXISTS sessions (
+    session_id TEXT PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    expires_at INTEGER NOT NULL
+);
+
+
 -- 🧠 Index pour performances
 CREATE INDEX idx_posts_visibility    ON posts(active, visibility, created_at);
 CREATE INDEX idx_friendships_status  ON friendships(status);
