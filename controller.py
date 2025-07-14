@@ -1,47 +1,38 @@
+class TemplateDict(dict):
+    def __missing__(self, key):
+        return f'{{{key}}}'
+
 def read_file(filename):
     with open(filename, 'r') as f:
         content = f.read()
     return content
 
-def base_html(title, body_content):
-    return f'''
-        <!DOCTYPE html>
-        <html lang="fr">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>{title}</title>
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-            {body_content}
-        </body>
-        </html>
-    '''
-
-def home(handler):
-    response_content = read_file('html/home.html')
+def home(handler, query_params=None, body_request=None):
+    response_content = read_file('html/index.html')
     handler.send_html_response(response_content)
 
-def root(handler):
-    handler.redirect('/home')
-
-def about(handler):
-    response_content = base_html('about', '<h1>Bienvenue dans la section « A propos »</h1>')
+def about(handler, **kwargs):
+    response_content = '<h1>Bienvenue dans la section « A propos »</h1>'
     handler.send_html_response(response_content)
 
-def error_404(handler):
-    response_content = base_html('404', '<h1>Erreur 404: Page non trouvée</h1>')
+def error_404(handler, **kwargs):
+    response_content = read_file('html/404.html')
+    handler.send_html_response(response_content, 404)
+
+def login_get(handler, **kwargs):
+    base_content = read_file('html/auth_views/base.html')
+    variable_content = read_file('html/auth_views/login.html')
+    context = TemplateDict(title='Connexion', variable_content=variable_content)
+    response_content = base_content.format_map(context)
     handler.send_html_response(response_content)
 
-def get_users(handler):
-    users = ['Manfoya', 'Sephora', 'Ifèdé', 'Gemas', 'Herman', 'Lucie', 'Damien']
-    response_content = '<h1>Liste des utilisateurs</h1>\n'
-    response_content += '<ul>\n'
-    for user in users:
-        response_content += f'<li>{user}</li>'
-    response_content += '</ul>\n'
-    response_content = base_html('Utilisateurs', response_content)
-    handler.send_html_response(response_content)
-    
+def register_get(handler, **kwargs):
+    pass
+
+def login_post(handler, **kwargs):
+    pass
+
+def register_post(handler, **kwargs):
+    pass
+
     

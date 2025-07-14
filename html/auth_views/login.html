@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Se connecter</h1>
+  <h2>Ravi de vous revoir</h2>
+  <form action="/login" method="POST">
+    <div class="input-field" id="email-field">
+      <input type="email" name="email" id="email" />
+      <label for="email">Email</label>
+      <p class="error"></p>
+    </div>
+    <div class="input-field" id="password-field">
+      <input type="password" name="password" id="password" />
+      <label for="password">Mot de passe</label>
+      <p class="error"></p>
+    </div>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
+  </form>
+  <hr />
+  <p>Vous n'avez pas de compte ? <a href="/register">Créer un compte</a></p>
+</div>

@@ -2,10 +2,9 @@ from controller import *
 
 routes = {
     'GET': {
-        '/': root,
-        '/home': home,
-        '/users': get_users,
+        '/': home,
         '/about': about,
+        '/login': login_get
     },
     'POST': {
         

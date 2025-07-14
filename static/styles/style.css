@@ -1,0 +1,98 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*,
+*::after,
+*::before {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-light: #f9f9f9;
+  --text-light: #333;
+  --accent-light: #007bff;
+
+  --bg-dark: #121212;
+  --text-dark: #f1f1f1;
+  --accent-dark: #1e88e5;
+}
+
+/* Paragraphes */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Liens */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.btn {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.logo {
+    width: fit-content;
+    height: 48px;
+}
+
+.logo img {
+    height: 100%;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+
