@@ -3,6 +3,9 @@ from pprint import pprint
 
 db_manager = DBManager()
 
+db_manager.execute_sql_file('./db_manager/generate.sql')
+db_manager.execute_sql_file('./db_manager/seed.sql')
+
 result = db_manager.fetch_all(
     """
         SELECT * 

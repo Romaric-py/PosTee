@@ -3,14 +3,15 @@
   <h2>Ravi de vous revoir</h2>
   <form action="/login" method="POST">
     <div class="input-field" id="email-field">
-      <input type="email" name="email" id="email" />
+      <input type="email" name="email" id="email" value="{email_value}"/>
       <label for="email">Email</label>
-      <p class="error"></p>
+      <p class="error">{email_error}</p>
     </div>
-    <div class="input-field" id="password-field">
+    <div class="input-field" id="password-field"> 
+      <!-- no password value for security purpose -->
       <input type="password" name="password" id="password" />
       <label for="password">Mot de passe</label>
-      <p class="error"></p>
+      <p class="error">{password_error}</p>
     </div>
     <button type="submit" class="btn btn-primary">Se connecter</button>
   </form>

@@ -1,59 +1,61 @@
 <div class="container">
   <h1>Créer votre compte</h1>
   <h2>Rejoindre PostTee. Tout commence ici.</h2>
+
   <form action="/register" method="POST">
     <div class="input-field" id="firstname-field">
-      <input type="text" name="firstname" id="firstname" required />
+      <input type="text" name="firstname" id="firstname" required value="{firstname_value}" />
       <label for="firstname">Prénom</label>
-      <p class="error"></p>
+      <p class="error">{firstname_error}</p>
     </div>
+
     <div class="input-field" id="lastname-field">
-      <input type="text" name="lastname" id="lastname" required />
+      <input type="text" name="lastname" id="lastname" required value="{lastname_value}" />
       <label for="lastname">Nom de famille</label>
-      <p class="error"></p>
+      <p class="error">{lastname_error}</p>
     </div>
+
     <div class="input-field" id="email-field">
-      <input type="email" name="email" id="email" required />
+      <input type="email" name="email" id="email" required value="{email_value}" />
       <label for="email">Email</label>
-      <p class="error"></p>
+      <p class="error">{email_error}</p>
     </div>
+
     <div class="input-field" id="password-field">
       <input type="password" name="password" id="password" required />
       <label for="password">Mot de passe</label>
+      <p class="error">{password_error}</p>
+    </div>
 
-      <p class="error"></p>
-    </div>
     <div class="input-field" id="confirm-password-field">
-      <input
-        type="password"
-        name="confirm-password"
-        id="confirm-password"
-        required
-      />
+      <input type="password" name="confirm-password" id="confirm-password" required />
       <label for="confirm-password">Confirmer le mot de passe</label>
-      <p class="error"></p>
+      <p class="error">{confirm_password_error}</p>
     </div>
+
     <div>
       <fieldset class="radio-set">
         <legend>Genre</legend>
         <div class="radio-field">
-          <input type="radio" value="male" name="gender" id="male" />
+          <input type="radio" value="male" name="gender" id="male" {gender_male_checked} />
           <label for="male">Homme</label>
         </div>
 
         <div class="radio-field">
-          <input type="radio" value="female" name="gender" />
+          <input type="radio" value="female" name="gender" id="female" {gender_female_checked} />
           <label for="female">Femme</label>
         </div>
 
         <div class="radio-field">
-          <input type="radio" value="other" name="gender" />
+          <input type="radio" value="other" name="gender" id="other" {gender_other_checked} />
           <label for="other">Autre</label>
         </div>
       </fieldset>
     </div>
+
     <button type="submit" class="btn btn-primary">S'inscrire</button>
   </form>
+
   <hr />
   <p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
 </div>

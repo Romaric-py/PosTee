@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS sessions (
 );
 
 
--- 🧠 Index pour performances
+-- Index pour performances
 CREATE INDEX idx_posts_visibility    ON posts(active, visibility, created_at);
 CREATE INDEX idx_friendships_status  ON friendships(status);
 CREATE INDEX idx_notifications_read  ON notifications(user_id, is_read, created_at);
@@ -120,7 +120,8 @@ CREATE INDEX idx_messages_conv_time  ON messages(conversation_id, created_at);
 CREATE INDEX idx_media_post          ON media(post_id);
 CREATE INDEX idx_media_message       ON media(message_id);
 
--- ⚙️ Triggers de mise à jour automatique (anti-récursifs)
+
+-- Triggers de mise à jour automatique (anti-récursifs)
 
 -- Trigger pour users
 CREATE TRIGGER trg_users_updated

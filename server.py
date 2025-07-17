@@ -3,7 +3,7 @@ import mimetypes
 import os
 from datetime import datetime, timedelta, timezone
 import json
-from controller import *
+from controllers.controller import *
 from routes import routes
 from urllib.parse import parse_qs, urlparse, quote, unquote
 
@@ -47,7 +47,7 @@ class MyHandler(BaseHTTPRequestHandler):
         self.send_header('Location', location)
         self.end_headers()
 
-    def set_cookie(self, key, value, path='/', days=None, http_only=True):
+    def set_cookie(self, key, value, path='/', seconds=None, http_only=True):
         """
         Définit un cookie HTTP.
 
@@ -59,8 +59,8 @@ class MyHandler(BaseHTTPRequestHandler):
             http_only (bool): Empêche l'accès JavaScript (sécurité).
         """
         cookie = f"{quote(key)}={quote(value)}"
-        if days is not None:
-            expire_date = datetime.now(timezone.utc) + timedelta(days=days)
+        if seconds is not None:
+            expire_date = datetime.now(timezone.utc) + timedelta(seconds=seconds)
             expires_str = expire_date.strftime("%a, %d-%b-%Y %H:%M:%S GMT")
             cookie += f"; Expires={expires_str}"
         cookie += f"; Path={path}"
@@ -121,10 +121,10 @@ class MyHandler(BaseHTTPRequestHandler):
 
             elif 'application/x-www-form-urlencoded' in content_type:
                 data = raw_data.decode()
-                return {k: v[0] if len(v) == 1 else v for k, v in parse_qs(data).items()}
+                return {k: (v[0] if len(v) == 1 else v) for k, v in parse_qs(data).items()}
 
             else:
-                # Content-Type non géré
+                print('Content-Type non géré')
                 return None
 
         except Exception as e:

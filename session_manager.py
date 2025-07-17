@@ -9,7 +9,8 @@ SESSION_DURATION = 3600  # 1h
 
 def create_session(user_id):
     # Note: utiliser uuid pour générer session_id
-    pass
+    # Retourne la session et sa durée de vie
+    return "ey-session-id-not-implemented", SESSION_DURATION
 
 def get_current_user(session_id):
     # consulte la base de données

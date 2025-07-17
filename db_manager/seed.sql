@@ -138,4 +138,3 @@ INSERT INTO media (post_id, file_url, mime_type) VALUES
 (10, '/uploads/photo10.jpg', 'image/jpeg');
 
 -- SESSIONS
--- ...
