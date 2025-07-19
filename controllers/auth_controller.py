@@ -2,18 +2,17 @@ import sqlite3
 import bcrypt
 from db_manager.db_manager import DBManager
 from session_manager import create_session
-from utils import read_file, TemplateDict
+from utils import read_file, TemplateDict, render
 
 # --- Helpers ---
 
 def render_auth_template(view_path: str, title: str, context: dict) -> str:
-    variable_content = read_file(view_path)
-    inner_context = TemplateDict(**context)
-    variable_content = variable_content.format_map(inner_context)
-
-    base_content = read_file('html/auth_views/base.html')
-    full_context = TemplateDict(title=title, variable_content=variable_content, escape=False)
-    return base_content.format_map(full_context)
+    variable_content = render(view_path, context)
+    return render('html/auth_views/base.html', 
+                  context= {
+                    'title': title,
+                    'variable_content': variable_content,
+                    }, escape=True)
 
 
 def redirect_with_cookie(handler, location: str, cookie: tuple = None):
@@ -95,7 +94,8 @@ def register_post(handler, **kwargs):
     if not required.issubset(data):
         return register_get(handler, data, {'email': 'Tous les champs sont requis'})
     
-    # TODO: étape de validation: utiliser une fonction qui prend firstname, lastname, email, password er retourne un dictionnaire des erreurs de validation
+    # TODO: étape de validation: utiliser une fonction qui prend firstname, lastname, email, password et retourne un dictionnaire des erreurs de validation
+    # validate_register_data(...) -> status(bool), errors(dict)
 
     if data['password'] != data['confirm-password']:
         return register_get(handler, data, {'password': 'Les mots de passe ne correspondent pas'})

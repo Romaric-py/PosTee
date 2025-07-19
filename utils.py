@@ -21,3 +21,8 @@ def read_file(filename):
     with open(filename, 'r') as f:
         content = f.read()
     return content
+
+def render(view_path, context, escape=False):
+    content = read_file(view_path)
+    context = TemplateDict(**context, escape=escape)
+    return content.format_map(context)

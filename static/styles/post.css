@@ -1,0 +1,221 @@
+.post,
+section.comments {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.post .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #bbb;
+  margin-right: 0.75rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.post .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post .author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.post .author-name {
+  font-weight: bold;
+}
+
+.post-date {
+  color: #777;
+  font-size: 0.85em;
+}
+
+.post-content,
+.full-post-content {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.post-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post .see-more {
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+}
+
+.post .see-more a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post .see-more a:hover {
+  text-decoration: underline;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.post-actions > div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f0f0f0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.comments-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+.post-actions > div:hover {
+  background: #e0e0e0;
+}
+
+.post-actions svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
+.post .count {
+  font-weight: bold;
+  font-size: 0.85em;
+  color: #333;
+}
+
+/* Details */
+.comment-form {
+  padding: 0.5rem 0;
+}
+
+.comment-form form {
+  display: flex;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.comment-form textarea {
+  resize: none;
+  flex: auto;
+  padding: 0.5rem;
+  line-height: 1.1;
+  font-size: 1rem;
+  background-color: rgba(219, 223, 222, 0.5);
+  border: none;
+  color: #333;
+}
+
+.comment-form textarea:focus {
+  border: none;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #999;
+}
+textarea {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+textarea::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.comment-form button {
+  flex: 0 0 5rem;
+  padding: 0.5rem 1rem;
+  background-color: blue;
+  color: white;
+  border: none;
+}
+
+/*  Commments */
+section.comments h2 {
+  font-size: 1.3rem;
+}
+
+section.comments h2 .count {
+  color: #777;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+section.comments .list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* One comment */
+.comment {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.comment-text {
+  margin: 0.5rem 0;
+  color: #222;
+}

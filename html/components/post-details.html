@@ -1,0 +1,96 @@
+<div class="post">
+  <div class="post-header">
+    <div class="avatar">
+      <img src="{avatar_url}" alt="Avatar" />
+    </div>
+    <div class="author-info">
+      <span class="author-name">{author_name}</span>
+      <span class="post-date">{date}</span>
+    </div>
+  </div>
+
+  <div class="full-post-content">
+    {post_content}
+  </div>
+
+  <div class="post-actions">
+    <div class="like-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="blue"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M7 11v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3a4 4 0 0 0 4-4V6a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1-2 2h-7a3 3 0 0 1-3-3"
+        />
+      </svg>
+      <span class="count">{like_count}</span>
+    </div>
+
+    <div class="comments-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path d="M3 20l1.65-4.95A8 8 0 1 1 8.5 20H3z" />
+      </svg>
+      <span class="count">{comment_count}</span>
+    </div>
+
+    <div class="share-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M4 12v1a8 8 0 0 0 8 8h0a8 8 0 0 0 8-8v-1M12 5l4 4m0 0l-4 4m4-4H4"
+        />
+      </svg>
+      <span class="count">{share_count}</span>
+    </div>
+  </div>
+
+  <div class="comment-form">
+    <form action="{post_comment_url}" method="POST">
+      <textarea
+        name="comment-content"
+        id="comment-content"
+        rows="2"
+        spellcheck="false"
+        placeholder="Ajouter un commentaire..."
+      ></textarea>
+      <button type="submit" id="comment-submit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M10 14l11 -11" />
+          <path
+            d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+          />
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<section class="comments">
+  <h2>Commentaires <span class="count">({comment_count})</span></h2>
+
+  <div class="list"></div>
+</section>

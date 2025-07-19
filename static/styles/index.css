@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .header {
@@ -12,7 +12,6 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-
 
 .nav-links {
   list-style: none;
@@ -68,7 +67,6 @@ main.main-content {
   font-weight: bold;
 }
 
-
 .why-us {
   background: #f9f9f9;
   padding: 2rem;
@@ -96,7 +94,7 @@ main.main-content {
 .hero-image {
   flex: 1 1 300px;
   min-height: 50vh;
-  background-image: url('/images/girl-on-hill.jpg');
+  background-image: url("/images/girl-on-hill.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 12px;
