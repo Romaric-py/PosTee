@@ -218,9 +218,7 @@ class MyHandler(BaseHTTPRequestHandler):
 if __name__ == '__main__':
     
     # Server address
-    HOST = 'localhost'
-    PORT = 8000
-    
-    server = HTTPServer((HOST, PORT), MyHandler)
-    print(f"Server is running on http://{HOST}:{PORT}")
+    port = int(os.environ.get('PORT', 8080))
+    server = HTTPServer(('0.0.0.0', port), MyHandler)
+    print(f'Server running on port {port}...')
     server.serve_forever()

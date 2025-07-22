@@ -43,16 +43,20 @@ def create_user(firstname, lastname, email, password, gender):
 # --- Views ---
 
 def login_get(handler, form_values=None, error_messages=None, **kwargs):
+    form_values = form_values or {}
+    error_messages = error_messages or {}
     context = {
-        'email_value': (form_values or {}).get('email', ''),
-        'email_error': (error_messages or {}).get('email', ''),
-        'password_error': (error_messages or {}).get('password', '')
+        'email_value': form_values.get('email', ''),
+        'email_error': error_messages.get('email', ''),
+        'password_error': error_messages.get('password', '')
     }
     html = render_auth_template('html/auth_views/login.html', 'Connexion', context)
     handler.send_html_response(html)
 
 
 def register_get(handler, form_values=None, error_messages=None, **kwargs):
+    form_values = form_values or {}
+    error_messages = error_messages or {}
     context = {
         "firstname_value": form_values.get("firstname", ""),
         "lastname_value": form_values.get("lastname", ""),
