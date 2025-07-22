@@ -9,7 +9,7 @@ from urllib.parse import parse_qs, urlparse, quote, unquote
 
 #
 ROUTES = routes
-STATIC_DIR = './static'
+STATIC_DIR = os.path.normpath('./static')
 
 # Our custom HTTP request handler
 class MyHandler(BaseHTTPRequestHandler):
@@ -181,7 +181,7 @@ class MyHandler(BaseHTTPRequestHandler):
         Returns:
             str | None: Chemin absolu du fichier ou None si non valide.
         """
-        clean_path = os.path.normpath(path).lstrip("/")
+        clean_path = os.path.normpath(path).lstrip(os.path.normpath('/'))
         filepath = os.path.join(STATIC_DIR, clean_path)
 
         if (
